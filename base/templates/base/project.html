@@ -1,0 +1,19 @@
+{% extends 'base/main.html' %}
+
+{%load static %} 
+
+{% block content %}
+
+<div class="container">
+    
+    <img class="project-image" src="{{project.thumbnail.url}} ">  <!--apropriarte size ki image daalo because set nahi hora class of css se-->
+ 
+    <h1>{{project.title}}</h1>
+    <a class="btn btn-warning" href="{% url 'edit-project' project.id %}">Edit</a>   <!--warning vale se bas color change hora (Yellow)-->
+
+    <hr>
+    <p> {{project.body|safe}} </p>
+
+</div>
+
+{% endblock content %}

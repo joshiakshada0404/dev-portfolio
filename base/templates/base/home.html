@@ -1,0 +1,82 @@
+{% extends 'base/main.html' %}
+
+{%load static %} 
+
+{% block content %}
+
+        <section class = "hero">
+            <div class="hero-content">
+                <div class="hero-content-intro">
+                  <img id ="profile-pic" src= "{% static 'images/profile-photo.jpeg' %}">
+                  <h1 class="intro-name">Akshada <br> Joshi</h1>
+                </div> 
+
+                <div class="hero-content-subheadline">
+                    <h3 class="description">Self Taught Developer</h3>
+                    <p class="slogan">When creativity meets Coding.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class = "container section-2">
+            
+            <h3>MY PROJECTS</h3>
+            <h5> Making My Journey Worth-While.   </h5>
+            <div class="projects-wrapper">
+
+                {%for project in projects %}
+                <div class="project-column">
+                    <a href=" {% url 'project' project.id %} ">
+                        <img class="project-thumbnail" src="{{project.thumbnail.url}}" >
+                    </a>
+                    <div class="project-body">
+                        <h5> {{project.title}} </h5>
+                    </div>
+                </div>
+                {%empty %}
+
+                <h3>There is no projects in the database....</h3> {% endfor %}
+
+                
+            </div>
+
+            <div class="about-wrapper">
+                <h3>More About Me</h3>
+            <p>As a Self Taught Developer, I bring a unique combination of Data structures and algorithms, Database and SQL
+                Object-oriented programming (OOP) languages , which allows me to approach problems from multiple perspective and find creative solutions.
+                 </p>
+                
+                <p>I believe that collaboration and teamwork are essential for success, and i enjoy working with others to achieve common goals and create meaningful impact. I have a proven track record of success in academic performance which demonstrates my ability to be dedicated, deliver results and exceed expectations.</p>
+
+            </div>
+            
+        </section>
+
+        <section class="section-1">
+            <div class="skills-container">
+                <h3>Skills</h3>
+
+                {% for skill in detailedSkills %}
+                <div class="skill-wrapper">
+                    <h5> {{skill.title}} </h5>
+                    <p> {{skill.body}} </p>
+                </div>
+                {% endfor %}
+
+                
+                <h5>
+                    Other Skills
+                </h5>
+                <div class="other-skills-wrapper">
+                    {% for skill in skills %}
+                    <div class="skill-tag">
+                        <span> {{skill.title}} </span>
+                    </div>
+                    {% endfor %}
+    
+                    
+                </div>
+            </div>
+        </section>
+
+{% endblock content %}
