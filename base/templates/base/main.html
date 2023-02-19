@@ -12,6 +12,16 @@
     <body>
 
         {% include 'base/navbar.html' %}          <!--this will niclude navbar to every page (projects page me bhi )-->
+        
+        {% if messages %}
+        
+            {% for message in messages %}
+            <div class="alert alert-success" role="alert">
+                {{ message }}
+            </div>
+            {% endfor %}
+        
+        {% endif %}
 
         {% block content %}
 
