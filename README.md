@@ -36,10 +36,10 @@ To run the portfolio website locally, follow these steps:
 ## Credits
 This portfolio website was created by me as part of learning project using various online resources and tutorials. Some notable resources include:
 
-[Django documentation](https://docs.djangoproject.com/en/4.1/)
-[MongoDB documentation](https://www.mongodb.com/docs/)
-Figma tutorials on YouTube
-[Git documentation](https://docs.github.com/en)
+- [Django documentation](https://docs.djangoproject.com/en/4.1/)
+- [MongoDB documentation](https://www.mongodb.com/docs/)
+- Figma tutorials on YouTube
+- [Git documentation](https://docs.github.com/en)
 
 ## Project Previews with images
 ### User View
